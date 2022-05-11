@@ -46,7 +46,9 @@ console.log(isObjectAnyFrozen(ob)); // true
 
 console.log(isObjectAnyFrozen({})); // false
 
-const obj = {};
+const obj = {
+  // name: "valera"
+};
 
 const res = assignLockedValues(obj, 'name');
 
@@ -60,12 +62,12 @@ const objWithProp = {
 const resNext = assignLockedValues(obj, 'name');
 
 console.log(resNext !== objWithProp); // true
-console.log(res.name); // test
+console.log(objWithProp.name); // test
 
 const freezeCheck = { name: 'test' };
 const freezeRes = freezeAllInObject(freezeCheck);
 
-freezeRes.test = 'test';
-delete freezeRes.name;
+freezeCheck.test = 'test';
+delete freezeCheck.name;
 
 console.log(freezeRes); // { name: 'test' }

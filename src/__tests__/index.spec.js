@@ -113,8 +113,8 @@ describe('all funcs', () => {
       expect(res !== undefined).toStrictEqual(true);
       expect(
         Object.isFrozen(res) &&
-          Object.isSealed(res) &&
-          !Object.isExtensible(res)
+        Object.isSealed(res) &&
+        !Object.isExtensible(res)
       ).toStrictEqual(true);
       expect(res !== obj).toStrictEqual(true);
     });
